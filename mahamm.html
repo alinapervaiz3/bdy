@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Happy Birthday Maham 🌸 — From Sidra</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg1:#fff0f6; --bg2:#ffeef8; --accent:#d24878; --soft:#ffd9e6; --cream:#fff6ec;
+    --paper:#fff8f9; --ink:#4a2330; --gold:#ffd89a;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg1),var(--bg2));font-family:Poppins,system-ui,Arial;color:var(--ink);-webkit-font-smoothing:antialiased}
+  main{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px}
+  .scene{width:100%;max-width:1100px;border-radius:18px;overflow:hidden;box-shadow:0 20px 60px rgba(53,18,36,0.09);position:relative;background:linear-gradient(180deg,rgba(255,255,255,0.85),rgba(255,247,249,0.8))}
+
+  /* Top party bunting & lights */
+  .bunting{position:absolute;left:0;right:0;top:10px;height:120px;pointer-events:none}
+  .flags{position:absolute;left:50%;transform:translateX(-50%);top:12px;width:86%;height:70px}
+  .string-lights{position:absolute;left:50%;transform:translateX(-50%);top:18px;width:86%;height:38px}
+
+  /* pages */
+  .page{display:none;padding:28px 36px;min-height:640px}
+  .page.active{display:block}
+  .row{display:flex;gap:24px}
+  @media(max-width:880px){.row{flex-direction:column}}
+
+  /* Intro card */
+  .intro{display:flex;align-items:center;gap:22px}
+  .intro-left{flex:1;padding:26px}
+  .intro-right{width:360px;padding:18px;border-radius:12px;background:linear-gradient(180deg,#fff,#fff6f8);box-shadow:inset 0 1px 0 rgba(255,255,255,0.6)}
+  h1{font-family:Pacifico, cursive;font-size:48px;margin:0;color:var(--accent);text-shadow:0 6px 20px rgba(210,70,120,0.08)}
+  p.lead{margin:8px 0 0 0;color:#7a3b50}
+  .cta{margin-top:22px}
+  .btn{background:linear-gradient(180deg,var(--accent),#a72251);color:white;padding:10px 14px;border-radius:14px;border:none;font-weight:700;cursor:pointer;box-shadow:0 12px 30px rgba(210,70,120,0.12)}
+  .btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(210,70,120,0.12);box-shadow:none}
+
+  /* scrapbook paper style element */
+  .paper{background:linear-gradient(180deg,var(--paper),#fff);padding:14px;border-radius:14px;border:1px dashed rgba(210,70,120,0.06);box-shadow:0 10px 30px rgba(200,120,150,0.05)}
+  .tape{width:80px;height:20px;background:linear-gradient(90deg,#fffbe8,#fff1b6);border-radius:6px;transform:rotate(-8deg);display:inline-block;margin-bottom:6px;box-shadow:0 4px 20px rgba(0,0,0,0.06)}
+
+  /* cherry scene */
+  .cherry-scene{position:relative;background:linear-gradient(180deg,#fff1fb, #fff9f9);height:520px;border-radius:12px;padding:18px;overflow:hidden}
+  .sakura-tree{position:absolute;left:40px;bottom:0;width:320px}
+  .mountain{position:absolute;right:40px;bottom:0;width:320px;opacity:0.95}
+  .petal{position:fixed;pointer-events:none;font-size:20px;will-change:transform,opacity}
+
+  /* glow trail */
+  .glow{position:fixed;width:18px;height:18px;border-radius:50%;pointer-events:none;mix-blend-mode:screen;box-shadow:0 0 18px rgba(255,160,210,0.9)}
+
+  /* quiz */
+  .quiz{padding:12px}
+  .q{background:linear-gradient(180deg,#fff,#fff4f7);border-radius:12px;padding:12px;margin-bottom:12px}
+  .options label{display:block;padding:8px 10px;border-radius:10px;margin:6px 0;cursor:pointer;border:1px dashed rgba(210,70,120,0.08)}
+  input[type=radio]{margin-right:10px}
+  .result{margin-top:12px;padding:12px;border-radius:12px;background:linear-gradient(90deg,#fff,#fff6f8);text-align:center}
+
+  /* surprise box */
+  .surprise-center{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px;padding-top:26px}
+  .gift{width:160px;height:140px;border-radius:12px;background:linear-gradient(180deg,#ffd9e6,#ffcce0);display:flex;align-items:center;justify-content:center;font-size:40px;cursor:pointer;box-shadow:0 18px 40px rgba(200,120,150,0.12)}
+  .gift .ribbon{position:absolute;width:160px;height:20px;background:#ffb1d0;transform:translateY(-34px);border-radius:10px}
+
+  /* apology card */
+  .apology{max-width:720px;margin:18px auto;padding:16px;border-radius:12px;background:linear-gradient(180deg,#fff,#fff6f8);box-shadow:0 12px 30px rgba(200,120,150,0.06)}
+  textarea{width:100%;min-height:120px;border-radius:8px;padding:10px;border:1px solid rgba(210,70,120,0.08);resize:vertical}
+
+  footer{padding:12px;text-align:center;color:#8a5a73;font-size:13px}
+
+  /* transitions */
+  .fade-in{animation:fadeIn 650ms ease both}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+  /* small decorative */
+  .sticker{display:inline-block;padding:8px 12px;border-radius:10px;background:linear-gradient(180deg,#fff6f8,#fff1f4);border:1px solid rgba(210,70,120,0.06);font-weight:600}
+
+</style>
+</head>
+<body>
+<main>
+  <div class="scene">
+
+    <!-- bunting and lights (SVG inline) -->
+    <div class="bunting" aria-hidden="true">
+      <svg class="flags" viewBox="0 0 1200 120" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#ffd9e6"/><stop offset="1" stop-color="#ffb6d9"/></linearGradient>
+        </defs>
+        <g transform="translate(0,10)">
+          <!-- string -->
+          <path d="M60 60 C200 10, 400 10, 540 60 C680 110, 900 110, 1140 60" fill="none" stroke="#e8c0d0" stroke-width="4" stroke-linecap="round"/>
+          <!-- triangles -->
+          <g id="triFlags">
+            <!-- generate triangles via JS clones -->
+          </g>
+        </g>
+      </svg>
+      <svg class="string-lights" viewBox="0 0 1200 60" preserveAspectRatio="xMidYMid meet">
+        <g transform="translate(0,12)">
+          <path d="M60 20 C200 -20, 400 -20, 540 20 C680 60, 900 60, 1140 20" fill="none" stroke="transparent" />
+          <!-- lights will be drawn with JS -->
+        </g>
+      </svg>
+    </div>
+
+    <!-- PAGE 1: Intro -->
+    <section id="page1" class="page active fade-in">
+      <div class="row">
+        <div class="intro-left">
+          <h1>Happy Birthday Maham sab se pyari biliiiiiiii🌸</h1>
+          <p class="lead">A special gift from Sidra.</p>
+          <div class="cta">
+            <button class="btn" onclick="go('page2')">is button ko mera gala samj ky dba do</button>
+            <button class="btn ghost" onclick="document.getElementById('musicFile').click()" style="margin-left:10px">Choose Music</button>
+            <input type="file" id="musicFile" accept="audio/*" style="display:none" />
+          </div>
+          <div style="margin-top:14px">
+            <span class="tape"></span>
+            <div class="paper" style="margin-top:8px;max-width:600px">
+              <div style="font-weight:700;color:var(--accent)">A note:</div>
+              <div style="margin-top:6px;color:#6d3448">I can write you thousands of words but they will never be able to describe how perfect and understanding friend you're to me as stars can never outshine the presence of moon, the wors can't describe your kindness, never ending freindship toward me, You’remy most loyal friend. You’re really not like other friends, You’re more than them. My babygirl, I can surely say, that if someone would truely know you, they will understand how precious you're. its not me, its you - who can be a best friend, partner or anything so perfectly. one who truely knows you, will never abandon you.</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="intro-right">
+          <div style="text-align:center">
+            <div style="font-size:22px;font-weight:700;color:var(--accent)">AJ meri rupanzal ka bdy he, maham ki taraf se sbko treat mily gi!</div>
+            <div style="margin-top:10px">
+              <div class="sticker">Love you to the moon and back</div>
+            </div>
+
+            <div style="margin-top:18px">
+              <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='180'><rect rx='12' width='100%' height='100%' fill='%23fff6f9'/><text x='50%' y='55%' font-size='20' text-anchor='middle' fill='%23d34b7a' font-family='Pacifico'>Maham</text></svg>" alt="Maham" style="width:100%;border-radius:8px;border:1px solid rgba(210,70,120,0.04)"/>
+            </div>
+
+            <div style="margin-top:18px;font-size:13px;color:#7a3b50">tum jo ay zindgi mn bat bn gai.</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PAGE 2: Cherry Garden -->
+    <section id="page2" class="page fade-in">
+      <div class="cherry-scene" id="garden">
+        <!-- left Sakura tree SVG -->
+        <svg class="sakura-tree" viewBox="0 0 220 380" preserveAspectRatio="xMinYMax">
+          <rect x="96" y="210" width="26" height="150" rx="6" fill="#7a4f3b"/>
+          <g>
+            <circle cx="50" cy="120" r="46" fill="#ffd6e9"/>
+            <circle cx="120" cy="80" r="54" fill="#ffd0e6"/>
+            <circle cx="180" cy="140" r="46" fill="#ffe0ef"/>
+            <circle cx="130" cy="170" r="36" fill="#ffd8ea"/>
+            <circle cx="70" cy="180" r="30" fill="#ffe6f0"/>
+          </g>
+        </svg>
+
+        <!-- right mountains for anime vibe -->
+        <svg class="mountain" viewBox="0 0 400 300" preserveAspectRatio="xMaxYMax">
+          <path d="M0 250 L110 80 L220 250 Z" fill="#fff0f6"/>
+          <path d="M170 250 L260 110 L350 250 Z" fill="#ffeef6"/>
+        </svg>
+
+        <!-- little bench and scrapbook card -->
+        <div style="position:absolute;left:50%;transform:translateX(-50%);bottom:30px;width:420px">
+          <div class="paper" style="display:flex;gap:12px;align-items:center;padding:16px">
+            <div style="flex:1">
+              <div style="font-weight:700;color:var(--accent)">aiye aiye shoq se aiye...</div>
+              <div style="margin-top:6px;color:#6a3446">pyari maham, advance sorry!
+</div>
+            </div>
+            <div>
+              <button class="btn" onclick="go('page3')">Take Quiz ➜</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PAGE 3: Quiz -->
+    <section id="page3" class="page fade-in">
+      <div style="padding:18px">
+        <h2 style="margin-top:0;color:var(--accent)">Best-Friend Quiz — For Maham 💕</h2>
+        <form id="quiz">
+          <div class="q">
+            <div style="font-weight:700">1) What best describes Maham?</div>
+            <div class="options">
+              <label><input type="radio" name="q1" value="a"> a) Dragon </label>
+              <label><input type="radio" name="q1" value="b"> b) Bili </label>
+              <label><input type="radio" name="q1" value="c"> c) Motapos </label>
+            </div>
+          </div>
+
+          <div class="q">
+            <div style="font-weight:700">2) Sidra is your forever best friend — choose the most Maham answer:</div>
+            <div class="options">
+              <label><input type="radio" name="q2" value="a"> a) Definitely yes</label>
+              <label><input type="radio" name="q2" value="b"> b) Obviously</label>
+              <label><input type="radio" name="q2" value="c"> c) Happily forever</label>
+            </div>
+          </div>
+
+          <div class="q">
+            <div style="font-weight:700">3) Maham's favorite hobby?</div>
+            <div class="options">
+              <label><input type="radio" name="q3" value="a"> a)Dimagh khana</label>
+              <label><input type="radio" name="q3" value="b"> b)Phone ky sath chipak ky rehna </label>
+              <label><input type="radio" name="q3" value="c"> c)Bari bari ankhen kr ky ghorna</label>
+            </div>
+          </div>
+
+          <div class="q">
+            <div style="font-weight:700">4) The thing Maham always says:</div>
+            <div class="options">
+              <label><input type="radio" name="q4" value="a"> a) "Tu te chup hi krja"</label>
+              <label><input type="radio" name="q4" value="b"> b) "Tu te dafa hi hoja"</label>
+              <label><input type="radio" name="q4" value="c"> c) "Yrr tenu bs ek hi km anda tang kiti jana !"</label>
+            </div>
+          </div>
+
+          <div class="q">
+            <div style="font-weight:700">5) Maham gusay mn kesi hoti he:</div>
+            <div class="options">
+              <label><input type="radio" name="q5" value="a"> a) Dracula</label>
+              <label><input type="radio" name="q5" value="b"> b) Aag wala dragon</label>
+              <label><input type="radio" name="q5" value="c"> c) Kirmanda</label>
+            </div>
+          </div>
+
+          <div class="q">
+            <div style="font-weight:700">6) Maham ka future:</div>
+            <div class="options">
+              <label><input type="radio" name="q6" value="a"> a) shadi 3 bchay, happy wife happy life</label>
+              <label><input type="radio" name="q6" value="b"> b) peerni</label>
+              <label><input type="radio" name="q6" value="c"> c) chorni</label>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:10px;align-items:center;margin-top:8px">
+            <button type="button" class="btn" id="submitQuiz">Submit</button>
+            <button type="button" class="btn ghost" id="resetQuiz">Reset</button>
+            <div id="quizNote" style="margin-left:auto;color:#7a3b50;font-weight:600">Good luck! 🌸</div>
+          </div>
+        </form>
+
+        <div id="quizResult" class="result" style="display:none"></div>
+      </div>
+    </section>
+
+    <!-- PAGE 4: Surprise -->
+    <section id="page4" class="page fade-in">
+      <div class="surprise-center">
+        <div style="text-align:center">
+          <div style="font-size:22px;font-weight:700;color:var(--accent)">Open your gift, Maham 🎁</div>
+          <div style="margin-top:6px;color:#6a3446">Sidra brought a little surprise and a song — hit the box when you're ready.</div>
+        </div>
+
+        <div style="position:relative">
+          <div class="gift" id="giftBox" aria-hidden="true">🎁</div>
+        </div>
+
+        <div id="afterGift" style="display:none;margin-top:6px;width:90%;max-width:760px">
+          <div class="paper" style="text-align:left">
+            <div style="font-weight:700;color:var(--accent)">A Late-but-Heartfelt Apology</div>
+            <p style="margin-top:6px;color:#6a3446">Maham — I'm sorry for being late, but you know I'm Spiderman. I was saving our world and fighting a bad guy. Love, Sidra 💗</p>
+            <div style="margin-top:8px">
+              <audio id="player" controls style="width:100%"></audio>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:12px">
+          <button class="btn" onclick="shareHint()">Thankuuuuu for being My Best-Friend</button>
+        </div>
+      </div>
+    </section>
+
+    <footer>Made with lots of love ✨</footer>
+
+  </div>
+</main>
+
+<!-- audio element hidden for upload handling -->
+<input type="file" id="audioUpload" accept="audio/*" style="display:none" />
+
+<script>
+/* ------------------ Page navigation ------------------ */
+function go(id){ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active')); document.getElementById(id).classList.add('active'); window.scrollTo(0,0); }
+
+/* ------------------ Flags + lights generation ------------------ */
+(function makeFlags(){
+  const group = document.getElementById('triFlags');
+  if(!group) return;
+  const colors = ['%23ffd9e6','%23ffc1da','%23ffd89a','%23ffe6f0','%23fff0e6'];
+  for(let i=0;i<22;i++){
+    const x = 40 + i*48;
+    const tri = document.createElementNS('http://www.w3.org/2000/svg','polygon');
+    const size=26; const y=48; const points = `${x},${y} ${x+size},${y} ${x+size/2},${y+24}`;
+    tri.setAttribute('points',points);
+    tri.setAttribute('fill', colors[i%colors.length]);
+    tri.setAttribute('opacity','0.98');
+    group.appendChild(tri);
+  }
+})();
+
+/* lights */
+(function makeLights(){
+  const svgLights = document.querySelector('.string-lights');
+  if(!svgLights) return;
+  const xmlns = 'http://www.w3.org/2000/svg';
+  const g = document.createElementNS(xmlns,'g');
+  for(let i=0;i<16;i++){
+    const cx = 60 + i*68;
+    const el = document.createElementNS(xmlns,'circle');
+    el.setAttribute('cx',cx); el.setAttribute('cy',28); el.setAttribute('r',8);
+    el.setAttribute('fill', i%2? '#ffd9e6':'#fff2d9'); el.setAttribute('opacity',0.98);
+    el.setAttribute('filter',''); g.appendChild(el);
+    // gentle blinking
+    (function(e,delay){ setInterval(()=>{ e.setAttribute('opacity',0.4+Math.random()*0.6) }, 900+delay*30) })(el,i);
+  }
+  svgLights.appendChild(g);
+})();
+
+/* ------------------ Music upload / choose ------------------ */
+const musicFileInput = document.getElementById('musicFile');
+const audioUpload = document.getElementById('audioUpload');
+const player = document.getElementById('player');
+let audioURL = null;
+
+// two inputs: top page chooseMusic triggers musicFile (hidden), we also have audioUpload for sharing programmatically
+musicFileInput.addEventListener('change', e=>{
+  const f = e.target.files[0]; if(!f) return; if(audioURL) URL.revokeObjectURL(audioURL);
+  audioURL = URL.createObjectURL(f); player.src = audioURL; showToast('Music loaded — go to Surprise and open the box!');
+});
+
+/* Allow drag-drop in garden to set music quickly */
+const garden = document.getElementById('garden');
+['dragenter','dragover'].forEach(ev=>garden.addEventListener(ev,e=>{ e.preventDefault(); e.dataTransfer.dropEffect='copy'; }));
+
+garden.addEventListener('drop', e=>{
+  e.preventDefault(); const f = e.dataTransfer.files[0]; if(f && f.type.startsWith('audio')){ if(audioURL) URL.revokeObjectURL(audioURL); audioURL = URL.createObjectURL(f); player.src = audioURL; showToast('Music set by drop — nice!'); }
+});
+
+/* ------------------ Petals + glow trail ------------------ */
+function rand(min,max){return Math.random()*(max-min)+min}
+function makePetal(x,y){ const el = document.createElement('div'); el.className='petal'; el.textContent='🌸'; document.body.appendChild(el); const size = rand(14,28); el.style.fontSize = size+'px'; el.style.left = x+'px'; el.style.top = y+'px'; el.style.opacity = 0.95; const angle = rand(-20,20); const life = rand(3000,7000); const sx = rand(-40,40); const start = performance.now(); function frame(t){ const p=(t-start)/life; if(p>1){ el.remove(); return; } el.style.transform = `translate(${sx*p}px, ${p* (window.innerHeight*0.9)}px) rotate(${angle + p*360}deg)`; el.style.opacity = 1 - p*0.95; requestAnimationFrame(frame); } requestAnimationFrame(frame); }
+
+// random slow petals
+setInterval(()=>{ makePetal(rand(20,window.innerWidth-20), -10) }, 450);
+
+// glow trail on pointer (touch friendly)
+let lastTime = 0; function trail(e){ const now = Date.now(); if(now - lastTime < 60) return; lastTime = now; const x = e.touches ? e.touches[0].clientX : e.clientX; const y = e.touches ? e.touches[0].clientY : e.clientY; const g = document.createElement('div'); g.className='glow'; g.style.left = (x-9)+'px'; g.style.top = (y-9)+'px'; g.style.background = `radial-gradient(circle at 30% 30%, rgba(255,200,230,0.95), rgba(255,140,190,0.6))`; document.body.appendChild(g); const life = 900 + Math.random()*600; const start = performance.now(); function anim(t){ const p = (t-start)/life; if(p>1){ g.remove(); return; } g.style.transform = `scale(${1+p*1.8})`; g.style.opacity = 1 - p; requestAnimationFrame(anim); } requestAnimationFrame(anim); }
+window.addEventListener('mousemove', trail); window.addEventListener('touchmove', trail, {passive:true});
+
+/* sweet click sparkle */
+window.addEventListener('click', (e)=>{ const x=e.clientX, y=e.clientY; for(let i=0;i<6;i++){ setTimeout(()=> makePetal(x+rand(-10,10), y+rand(-10,10)), i*40); } });
+
+/* ------------------ Gift box interaction ------------------ */
+const giftBox = document.getElementById('giftBox'); const afterGift = document.getElementById('afterGift');
+giftBox.addEventListener('click', ()=>{
+  giftBox.animate([{transform:'scale(1)'},{transform:'scale(0.96)'},{transform:'scale(1)'}],{duration:450,iterations:1,easing:'ease-out'});
+  // open: reveal audio + apology
+  setTimeout(()=>{
+    afterGift.style.display='block'; afterGift.classList.add('fade-in');
+    // if audio not set, try default path 'music.mp3'
+    if(!player.src){ player.src = 'music.mp3'; }
+    try{ player.play(); }catch(e){}
+    // small confetti
+    burstConfetti();
+  },180);
+});
+
+function burstConfetti(){ for(let i=0;i<36;i++){ const c=document.createElement('div'); c.style.position='fixed'; c.style.left = rand(0,window.innerWidth)+'px'; c.style.top = '-20px'; c.style.width='8px'; c.style.height='12px'; c.style.background = ['#ffd9e6','#fff2d9','#ffc5d8'][Math.floor(rand(0,3))]; c.style.borderRadius='2px'; c.style.opacity=0.95; document.body.appendChild(c); const life = 1600 + Math.random()*1400; const start = performance.now(); (function animate(el,st,lf){ function f(t){ const p=(t-st)/lf; if(p>1){ el.remove(); return;} el.style.top = (p*(window.innerHeight+40)) + 'px'; el.style.left = (parseFloat(el.style.left) + Math.sin(p*10)*40) + 'px'; el.style.opacity = 1 - p*0.9; requestAnimationFrame(f); } requestAnimationFrame(f); })(c,start,life); } }
+
+/* ------------------ Quiz logic ------------------ */
+const correct = { q1:'b', q2:'c', q3:'a', q4:'a', q5:'b', q6:'a' };
+document.getElementById('submitQuiz').addEventListener('click', ()=>{
+  const data = {}; for(let i=1;i<=6;i++){ const v = document.querySelector(`input[name=q${i}]:checked`); data['q'+i] = v? v.value : null; }
+  let score=0; let total=6; for(const k in correct) if(data[k] && data[k]===correct[k]) score++;
+  const res = document.getElementById('quizResult'); res.style.display='block'; res.innerHTML = `<strong>Score: ${score} / ${total}</strong><div style='margin-top:8px'>${score===6? 'Perfect — telepathic best friend! 💖' : score>=4? 'So close — you know her well! 🌸' : 'Cute effort — more memories to make ✨'}</div>`;
+  // small reaction
+  if(score>=4) burstConfetti(); else for(let i=0;i<6;i++){ setTimeout(()=> makePetal(window.innerWidth/2 + rand(-80,80), window.innerHeight/2 + rand(-80,80)), i*60); }
+  // after a delay, go to surprise
+  setTimeout(()=> go('page4'), 1200);
+});
+
+document.getElementById('resetQuiz').addEventListener('click', ()=>{ document.getElementById('quiz').reset(); document.getElementById('quizResult').style.display='none'; showToast('Quiz reset'); });
+
+/* ------------------ helpers: toast & share hint ------------------ */
+function showToast(msg, ms=1500){ const t=document.createElement('div'); t.textContent=msg; t.style.position='fixed'; t.style.left='50%'; t.style.transform='translateX(-50%)'; t.style.bottom='28px'; t.style.padding='10px 14px'; t.style.background='linear-gradient(90deg,#fff,#fff8fb)'; t.style.borderRadius='12px'; t.style.boxShadow='0 10px 30px rgba(200,120,150,0.12)'; t.style.color='#7a3b50'; t.style.fontWeight=700; document.body.appendChild(t); setTimeout(()=> t.style.opacity=0.01, ms-200); setTimeout(()=> t.remove(), ms); }
+function shareHint(){ showToast('Chal Nikal ethu hun💗',3000); }
+
+/* ------------------ small accessibility: keyboard toggles ------------------ */
+window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') go('page1'); if(e.code==='Space'){ e.preventDefault(); const p = document.querySelector('.page.active'); if(p && p.id==='page4' && player.src) { if(player.paused) player.play(); else player.pause(); } } });
+
+/* On load welcome */
+window.addEventListener('load', ()=>{ setTimeout(()=> showToast('Khush Amdeed 🌸'),400); });
+</script>
+</body>
+</html>
